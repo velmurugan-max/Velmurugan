@@ -1,0 +1,32 @@
+name=input("Enter patient name:")
+age=int(input("Enter patient age:"))
+print("Patient name:",name)
+print("Patient age:",age)
+BP=int(input("Enter patient BP:"))
+print("Patient BP:",BP)
+cholesterol=input("Enter patient cholesterol:")
+print("Patient cholesterol:",cholesterol)
+family_history_diabetes=input("Enter patient family history of diabetes:")
+print("Patient family history of diabetes:",family_history_diabetes)
+
+patient_data = {
+   'age': age,
+    'blood_pressure': BP,
+    'cholesterol': cholesterol,
+    'family_history_diabetes': family_history_diabetes,
+
+}
+
+
+def predict_disease_risk(patient_data):
+
+  if patient_data['age'] > 50 and patient_data['blood_pressure'] > 130:
+    risk_level = "High"
+  else:
+    risk_level = "Low"
+  return risk_level
+
+
+
+risk_level = predict_disease_risk(patient_data)
+print(f"Predicted disease risk: {risk_level}")
